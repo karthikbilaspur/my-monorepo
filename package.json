@@ -1,25 +1,44 @@
 {
   "name": "my-monorepo",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"turbo run build",
-    "dev":"turbo run dev",
-    "lint":"turbo run lint",
-    "clean": "turbo run clean"
+  "type": "module",
 
+  "scripts": {
+    "dev": "turbo run dev",
+
+    "build": "turbo run build",
+
+    "lint": "turbo run lint",
+
+    "typecheck": "turbo run typecheck",
+
+    "test": "turbo run test",
+
+    "clean": "turbo run clean",
+
+    "format": "prettier --write .",
+
+    "format:check": "prettier --check .",
+
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
       "version": "^11.3.0",
       "onFail": "download"
     }
-  },
-  "type": "module"
+  }
 }
