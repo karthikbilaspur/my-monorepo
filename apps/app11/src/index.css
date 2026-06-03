@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fafafa;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background: #171717;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #262626;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #a3a3a3;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  font-size: 0.875rem;
+}
+
+.tab.active {
+  color: #fafafa;
+  border-bottom-color: #f59e0b;
+}
+
+.input-area {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  color: #a3a3a3;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+textarea {
+  width: 100%;
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fafafa;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  outline: 2px solid #f59e0b;
+  border-color: transparent;
+}
+
+.file-drop {
+  border: 2px dashed #262626;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-drop:hover,.file-drop.dragging {
+  border-color: #f59e0b;
+  background: #f59e0b10;
+}
+
+.file-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hash-item {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.hash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.hash-name {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.hash-value {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8125rem;
+  word-break: break-all;
+  line-height: 1.5;
+  color: #fafafa;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background: #f59e0b;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background: #d97706;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #262626;
+  color: #fafafa;
+}
+
+.btn-secondary:hover {
+  background: #404040;
+}
+
+.btn-icon {
+  padding: 0.375rem;
+  background: #262626;
+}
+
+.btn-icon:hover {
+  background: #404040;
+}
+
+.bcrypt-options {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bcrypt-options input {
+  width: 80px;
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 6px;
+  color: #fafafa;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}

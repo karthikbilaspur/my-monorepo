@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fafafa;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background: #171717;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  background: #fafafa;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background: #e5e5e5;
+}
+
+.btn-secondary {
+  background: #262626;
+  color: #fafafa;
+}
+
+.btn-secondary:hover {
+  background: #404040;
+}
+
+select, input[type="color"] {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 6px;
+  color: #fafafa;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.color-card {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.color-card:hover {
+  border-color: #fafafa;
+  transform: scale(1.02);
+}
+
+.color-info {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.color-info span {
+  display: block;
+  color: #fafafa;
+}
+
+.copied-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #22c55e;
+  color: #0a0a0a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.export-box {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+}
+
+.lock-btn {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fafafa;
+}

@@ -1,0 +1,247 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.balance-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  text-align: right;
+}
+
+.balance-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.balance-amount {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.balance-amount.pos { color: #10b981; }
+.balance-amount.neg { color: #ef4444; }
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.form-card {
+  padding: 1.5rem;
+}
+
+.form-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.btn-primary {
+  width: 100%;
+  background: #111827;
+  color: white;
+  border: none;
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1f2937;
+}
+
+.month-card {
+  transition: box-shadow 0.2s;
+}
+
+.month-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.month-header:hover {
+  background: #fafafa;
+}
+
+.month-info h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.month-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.stat-item.income { color: #10b981; }
+.stat-item.expense { color: #ef4444; }
+.stat-item.balance.pos { color: #10b981; }
+.stat-item.balance.neg { color: #ef4444; }
+
+.chevron {
+  font-size: 1.5rem;
+  color: #9ca3af;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.month-body {
+  border-top: 1px solid #f3f4f6;
+  padding: 1.5rem;
+}
+
+.chart-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.transaction-list h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #6b7280;
+}
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+}
+
+.transaction-title {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.125rem;
+}
+
+.transaction-meta {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.transaction-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.transaction-amount {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.transaction-amount.expense { color: #ef4444; }
+.transaction-amount.income { color: #10b981; }
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #d1d5db;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+}
+
+.empty,.empty-card {
+  text-align: center;
+  color: #9ca3af;
+  padding: 2rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+ .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+ .balance-card {
+    text-align: left;
+  }
+}
