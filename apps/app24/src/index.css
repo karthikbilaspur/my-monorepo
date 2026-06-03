@@ -1,0 +1,391 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #fafafa;
+  color: #171717;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  /* Flexbox */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ea580c;
+}
+
+.subtitle {
+  color: #737373;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: #ea580c;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Flexbox for filters */
+.filters-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+/* Flexbox wrap for tags */
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-filter {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-filter.active {
+  background: #ea580c;
+  color: white;
+  border-color: #ea580c;
+}
+
+/* CSS Grid for recipes - responsive */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card.dragging {
+  opacity: 0.5;
+}
+
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recipe-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: grab;
+}
+
+.recipe-badges {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  /* Flexbox */
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.badge {
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.difficulty-easy { background: #22c55e; }
+.badge.difficulty-medium { background: #f59e0b; }
+.badge.difficulty-hard { background: #ef4444; }
+
+.recipe-content {
+  padding: 1.25rem;
+  /* Flexbox column */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipe-content h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-desc {
+  font-size: 0.875rem;
+  color: #737373;
+  margin-bottom: 0.75rem;
+}
+
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+/* Flexbox tabs instead of accordions */
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1rem;
+}
+
+.tab-nav button {
+  flex: 1;
+  padding: 0.625rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #737373;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tab-nav button.active {
+  color: #ea580c;
+  border-bottom-color: #ea580c;
+}
+
+.tab-content {
+  flex: 1;
+  min-height: 120px;
+}
+
+/* Flexbox grid for overview */
+.overview-grid {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.ingredients-list {
+  list-style: none;
+}
+
+.ingredients-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0.875rem;
+}
+
+.ingredient-amount {
+  font-weight: 600;
+  color: #ea580c;
+}
+
+.instructions-list {
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.instructions-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.btn-add-plan {
+  width: 100%;
+  margin-top: auto;
+  background: #ea580c;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CSS Grid for meal planner */
+.meal-planner {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.meal-planner h2 {
+  margin-bottom: 1.5rem;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.meal-day {
+  border: 2px dashed #e5e5e5;
+  border-radius: 0.5rem;
+  min-height: 200px;
+  transition: all 0.2s;
+}
+
+.meal-day.drop-over {
+  border-color: #ea580c;
+  background: #fff7ed;
+}
+
+.day-header {
+  padding: 0.75rem;
+  background: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.day-name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.day-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #737373;
+}
+
+.day-meals {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fafafa;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+}
+
+.meal-item img {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.meal-item span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #a3a3a3;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.btn-remove:hover {
+  color: #ef4444;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+ .recipes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+ .week-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+ .recipes-grid {
+    grid-template-columns: 1fr;
+  }
+
+ .week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+ .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+ .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+ .tab-nav button {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.25rem;
+  }
+}
